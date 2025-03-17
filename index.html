@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>爱的告白 | Love Confession</title>
+    <link rel="stylesheet" href="css/style.css">
+    <!-- 引入字体图标库 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- 引入动画库 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+</head>
+<body>
+    <!-- 加载动画 -->
+    <div class="loading-container" id="loading">
+        <div class="loading-heart">
+            <i class="fas fa-heart"></i>
+        </div>
+        <p>正在加载爱的告白...</p>
+    </div>
+
+    <!-- 主页面内容 -->
+    <div class="main-container" id="main-content">
+        <!-- 背景效果 -->
+        <div class="background-effects">
+            <div id="particles-js"></div>
+            <div class="floating-hearts"></div>
+        </div>
+
+        <!-- 头部区域 -->
+        <header class="header">
+            <h1 class="title animate__animated animate__fadeInDown">我想对你说</h1>
+            <p class="subtitle animate__animated animate__fadeInUp">一段关于爱的告白</p>
+        </header>
+
+        <!-- 主要内容区域 -->
+        <main class="content">
+            <!-- 照片墙/轮播 -->
+            <section class="photo-gallery">
+                <div class="gallery-container">
+                    <div class="photo-item" id="photo1">
+                        <div class="photo-frame">
+                            <img src="images/placeholder1.jpg" alt="美好回忆1" class="memory-photo">
+                        </div>
+                        <p class="photo-caption">我们的第一次相遇</p>
+                    </div>
+                    <div class="photo-item" id="photo2">
+                        <div class="photo-frame">
+                            <img src="images/placeholder2.jpg" alt="美好回忆2" class="memory-photo">
+                        </div>
+                        <p class="photo-caption">难忘的时光</p>
+                    </div>
+                    <div class="photo-item" id="photo3">
+                        <div class="photo-frame">
+                            <img src="images/placeholder3.jpg" alt="美好回忆3" class="memory-photo">
+                        </div>
+                        <p class="photo-caption">特别的日子</p>
+                    </div>
+                </div>
+                <div class="gallery-controls">
+                    <button class="gallery-btn prev-btn"><i class="fas fa-chevron-left"></i></button>
+                    <button class="gallery-btn next-btn"><i class="fas fa-chevron-right"></i></button>
+                </div>
+            </section>
+
+            <!-- 告白信 -->
+            <section class="love-letter">
+                <div class="letter-container">
+                    <div class="letter-header">
+                        <i class="fas fa-heart"></i>
+                        <h2>爱的告白</h2>
+                        <i class="fas fa-heart"></i>
+                    </div>
+                    <div class="letter-content" id="typewriter-text">
+                        <p>亲爱的 <span class="highlight" id="lover-name">__NAME__</span>：</p>
+                        <p>当我写下这些文字时，我的心跳加速，思绪万千。</p>
+                        <p>自从遇见你的那一刻起，我的世界便有了不同的色彩。你的笑容如阳光般温暖，你的声音如清泉般悦耳。</p>
+                        <p>与你在一起的每一刻都是珍贵的回忆，那些欢笑、感动、甚至是平凡的日常，都因为有你的存在而变得弥足珍贵。</p>
+                        <p>我想告诉你，我爱你。不仅仅是因为你的美丽，更因为你的善良、勇敢和真诚。</p>
+                        <p>如果未来是一本书，我希望能与你共同书写每一页；如果人生是一场旅行，我希望能与你携手走过每一程。</p>
+                        <p>无论是晴天还是雨天，无论是欢笑还是泪水，我都希望能与你一起面对。</p>
+                        <p>这是我最真挚的告白，也是我最深切的期望。</p>
+                        <p class="signature">爱你的 <span class="highlight" id="my-name">__MY_NAME__</span></p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 互动区域 -->
+            <section class="interactive-section">
+                <div class="heart-animation">
+                    <div class="heart-container">
+                        <div class="heart" id="beating-heart"></div>
+                    </div>
+                    <p class="heart-text">点击接受我的心意</p>
+                </div>
+                
+                <div class="response-buttons">
+                    <button class="response-btn yes-btn" id="accept-btn">
+                        <i class="fas fa-heart"></i> 我愿意
+                    </button>
+                    <button class="response-btn no-btn" id="think-btn">
+                        让我想想
+                    </button>
+                </div>
+            </section>
+        </main>
+
+        <!-- 音乐播放器 -->
+        <div class="music-player">
+            <audio id="bgm" loop>
+                <source src="music/love_song.mp3" type="audio/mp3">
+            </audio>
+            <button class="music-toggle" id="music-btn">
+                <i class="fas fa-music"></i>
+            </button>
+        </div>
+
+        <!-- 设置按钮 -->
+        <div class="settings">
+            <button class="settings-toggle" id="settings-btn">
+                <i class="fas fa-cog"></i>
+            </button>
+            <div class="settings-panel" id="settings-panel">
+                <h3>个性化设置</h3>
+                <div class="setting-item">
+                    <label for="name-input">对方名字:</label>
+                    <input type="text" id="name-input" placeholder="输入对方名字">
+                </div>
+                <div class="setting-item">
+                    <label for="my-name-input">你的名字:</label>
+                    <input type="text" id="my-name-input" placeholder="输入你的名字">
+                </div>
+                <div class="setting-item">
+                    <label for="theme-select">主题颜色:</label>
+                    <select id="theme-select">
+                        <option value="red">红色</option>
+                        <option value="pink">粉色</option>
+                        <option value="purple">紫色</option>
+                        <option value="blue">蓝色</option>
+                    </select>
+                </div>
+                <button class="save-settings" id="save-settings">保存设置</button>
+            </div>
+        </div>
+
+        <!-- 接受后的惊喜动画 -->
+        <div class="celebration" id="celebration">
+            <div class="fireworks"></div>
+            <div class="confetti"></div>
+            <div class="message-box">
+                <h2>❤️ 我们的故事从此开始 ❤️</h2>
+                <p>感谢你接受我的心意</p>
+                <p class="date" id="today-date"></p>
+            </div>
+        </div>
+    </div>
+
+    <!-- 引入JS库 -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="js/confetti.min.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
